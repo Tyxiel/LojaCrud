@@ -1,0 +1,56 @@
+﻿@model LojaCrud.Models.Produto
+
+@{
+    ViewData["Title"] = "Adicionar Produto";
+}
+
+<h1>Adicionar Produto</h1>
+<h5>Preencha os campos abaixo para adicionar um novo produto.</h5>
+<hr />
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" placeholder="Nome do produto" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdCliente" class="control-label"></label>
+                <select asp-for="IdCliente" class="form-control" asp-items="ViewBag.IdCliente">
+                    <option value="">Selecione um cliente</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantidade" class="control-label"></label>
+                <input asp-for="Quantidade" class="form-control" placeholder="Quantidade do produto" />
+                <span asp-validation-for="Quantidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Valor" class="control-label"></label>
+                <input asp-for="Valor" class="form-control" placeholder="Valor do produto" />
+                <span asp-validation-for="Valor" class="text-danger"></span>
+            </div>
+            <div class="form-group" disabled>
+                <label asp-for="CriadoEm" class="control-label"></label>
+                <input asp-for="CriadoEm" class="form-control" readonly />
+                <span asp-validation-for="CriadoEm" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2 mb-2">
+                <input type="submit" value="Adicionar" class="btn btn-primary btn-block" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+<div class="text-center">
+    <a class="btn btn-secondary" asp-action="Index">Voltar ao início</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

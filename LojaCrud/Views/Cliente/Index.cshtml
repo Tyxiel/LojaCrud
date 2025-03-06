@@ -1,0 +1,45 @@
+﻿@model IEnumerable<LojaCrud.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Clientes</h1>
+<h5>Gerencie aqui os clientes.</h5>
+<hr />
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Adicionar Cliente</a>
+</p>
+
+<table class="table table-striped table-bordered" id="tableCliente">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="text-center" style="line-height: 1.5;">
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.Telefone)
+                </td>
+                <td class="justify-content-center align-content-center">
+                    <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.IdCliente">Editar</a>
+                    <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.IdCliente">Detalhes</a>
+                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.IdCliente">Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

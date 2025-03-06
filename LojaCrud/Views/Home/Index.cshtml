@@ -1,0 +1,24 @@
+﻿<div class="text-center" style="background-color: var(--background);">
+    <h1 class="display-4" style="color: var(--headline);">Central de Gerenciamento de Banco de Dados</h1>
+    <p class="text-justify" style="color: var(--paragraph);">Bem-vindo à sua central de gerenciamento! Aqui você pode gerenciar todos os aspectos do seu banco de dados. Utilize os botões abaixo para acessar as diferentes seções do sistema.</p>
+    <hr class="m-lg-2" style="border-color: var(--secondary);" />
+    <div class="container">
+        <h2 class="mb-lg-5" style="color: var(--headline);">✨ Acesse as Seções ✨</h2>
+        <div class="d-flex flex-wrap justify-content-between gap-3">
+            <div class="card rounded-3 shadow" style="flex: 0 0 48%; margin-bottom: 20px; background-color: var(--main);">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: var(--headline);">Clientes</h5>
+                    <p class="card-text" style="color: var(--paragraph);">Gerencie as informações dos clientes, visualize dados e faça alterações conforme necessário.</p>
+                    <a class="btn" style="background-color: var(--button); color: var(--button-text); border-color: var(--button);" asp-area="" asp-controller="Cliente" asp-action="Index">Acessar Clientes</a>
+                </div>
+            </div>
+            <div class="card rounded-3 shadow" style="flex: 0 0 48%; margin-bottom: 20px; background-color: var(--main);">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: var(--headline);">Produtos</h5>
+                    <p class="card-text" style="color: var(--paragraph);">Administre os produtos disponíveis, adicione novos itens e atualize informações existentes.</p>
+                    <a class="btn" style="background-color: var(--button); color: var(--button-text); border-color: var(--button);" asp-area="" asp-controller="Produto" asp-action="Index">Acessar Produtos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
